@@ -1,0 +1,31 @@
+{
+    "name": "Clever Disguise",
+    "description": "Glasses and a hat.",
+    "image": "https://coolnfts.com/clever-disguse-preview.png",
+    "metadata_standard": "ETM_v1.0.0",
+    "extensions": [ "ETM_MULTIASSET_v1.0.0" ],
+    "assets": [
+      {
+        "name": "Glasses",
+        "description": "An unassuming pair of glasses.",
+        "media_type": "model",
+        "files": [
+          {
+            "url": "https://ipfs.io/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi",
+            "file_type": "model/fbx"
+          }
+        ]
+      },
+      {
+        "name": "Hat",
+        "description": "A suspicious-looking hat.",
+        "media_type": "model",
+        "files": [
+          {
+            "url": "https://ipfs.io/idzbf55yqtglco3fbaqlyufe3fn62y7hu67uh7mdu7pfs5tzrydgiebyfab",
+            "file_type": "model/fbx"
+          }
+        ]
+      }
+    ]
+  }

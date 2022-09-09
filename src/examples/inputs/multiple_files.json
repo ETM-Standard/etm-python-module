@@ -1,0 +1,26 @@
+{
+  "name": "Snazzy Shirt",
+  "description": "A shirt to wear to the jazz club.",
+  "image": "https://coolnfts.com/snazzy-shirt-preview.mp4",
+  "metadata_standard": "ETM_v1.0.0",
+  "extensions": [ "ETM_MULTIASSET_v1.0.0" ],
+  "assets": [
+    {
+      "media_type": "model",
+      "files": [
+        {
+          "name": "Shirt Image",
+          "description": "A high-res render of a snazzy shirt.",
+          "url": "https://ipfs.io/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi",
+          "file_type": "image/png"
+        },
+        {
+          "name": "Shirt Model",
+          "description": "A rigged model of a snazzy shirt.",
+          "url": "https://ipfs.io/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi",
+          "file_type": "model/fbx"
+        }
+      ]
+    }
+  ]
+}
