@@ -1,5 +1,4 @@
-from standard_modules import issue_handler
-from standard_modules.standard_module_base import ExtensionName, JsonObject, StandardModule, get_extension_module
+from standard_modules.standard_module_base import ExtensionName, StandardModule, get_extension_module
 
 NAME_KEY = 'name'
 DESCRIPTION_KEY = 'description'
@@ -51,7 +50,7 @@ class ETM_v1_0_0(StandardModule):
         self.issue_handler.log_warning(self.standard_name.get_full_name(), 'Top-Level JSON', message)
     def validate(self):
         self.issue_handler.clear()
-        if self.name == None: self._log_error(f'must contain a \"{NAME_KEY}\" key')
+        if self.name == None: self._log_warning(f'a \"{NAME_KEY}\" key is recommended')
         if self.image == None: self._log_warning(f'an \"{IMAGE_KEY}\" key is recommended')
         if self.metadata_standard == None: self._log_error(f'must contain a \"{METADATA_STANDARD_KEY}\" key')
         if self.extensions == None: self._log_error(f'must contain a \"{EXTENSIONS_KEY}\" key')

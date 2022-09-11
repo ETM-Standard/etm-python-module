@@ -1,6 +1,5 @@
-from standard_modules.standard_module_base import JsonObject, StandardModule
+from standard_modules.standard_module_base import StandardModule
 from standard_modules.etm_multiasset_asset import Asset
-from standard_modules.etm_multiasset_common import VALID_MEDIA_TYPES
 
 ASSETS_KEY = 'assets'
 

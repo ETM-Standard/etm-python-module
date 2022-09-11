@@ -2,7 +2,7 @@ import os, requests
 
 from standard_modules.standard_module_base import InvalidStandardModule
 from etm_reader import read_metadata_file
-from etm_interpreter_filters import AssetFilter, FileFilter
+from etm_interpreter_filters import AssetFilter, FileFilter, AttributeFilter
 
 class EtmInterpreter:
     def __init__(self, etm):
@@ -15,6 +15,10 @@ class EtmInterpreter:
     def get_files(self, file_filter=FileFilter()):
         files = [f for a in self.get_assets() for f in a.files]
         return file_filter.filter(files)
+    def get_attributes(self, attribute_filter=AttributeFilter()):
+        etm_attributes = self.etm.try_get_extension('ETM_ATTRIBUTES') if self.is_valid else None
+        if etm_attributes == None: return []
+        return attribute_filter.filter(etm_attributes.attributes)
     def _get_unique_filepath(self, dirpath, file_basename, file_extension):
         filepath = os.path.join(dirpath, f'{file_basename}.{file_extension}')
         index = 1

@@ -3,7 +3,7 @@ import pytest, copy
 
 sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir))
 import etm_reader
-from standard_modules import standard_module_base, etm_multiasset_asset, etm_multiasset_file
+from standard_modules import etm_multiasset_asset, etm_multiasset_file
 
 VALID_METADATA_DICT = {
     "name": "My Cool NFT",

@@ -35,11 +35,11 @@ def test_etmExtensible_validMetadataHasNoErrorsOrWarnings():
     etm = etm_reader.read_metadata_dict(VALID_METADATA_DICT)
     assert not etm.issue_handler.has_errors() and not etm.issue_handler.has_warnings()
 
-def test_etmExtensible_missingNameHasError():
+def test_etmExtensible_missingNameHasWarning():
     metadata_dict = copy.deepcopy(VALID_METADATA_DICT)
     del metadata_dict['name']
     etm = etm_reader.read_metadata_dict(metadata_dict)
-    assert etm.issue_handler.has_errors()
+    assert etm.issue_handler.has_warnings()
 
 def test_etmExtensible_missingDescriptionHasNoError():
     metadata_dict = copy.deepcopy(VALID_METADATA_DICT)

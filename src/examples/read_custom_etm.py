@@ -23,14 +23,21 @@ if __name__ == '__main__':
         print('No custom metadata found. To use this example, place a file called \"custom_metadata.json\" into the examples/inputs directory')
     else:
         etm = read_metadata_file(filepath)
-        etm_handler = EtmInterpreter(etm)
-        if etm_handler.is_valid:
-            assets = etm_handler.get_assets()
-            print(f'Printing all assets...\n')
-            for asset_index in range(len(assets)):
-                assets[asset_index].printout()
+        etm_interpreter = EtmInterpreter(etm)
+        if etm_interpreter.is_valid:
+            assets = etm_interpreter.get_assets()
+            if len(assets) > 0:
+                print(f'Printing all assets...\n')
+                for attribute_index in range(len(assets)):
+                    assets[attribute_index].printout()
+
+            attributes = etm_interpreter.get_attributes()
+            if len(attributes) > 0:
+                print(f'Printing all attributes...\n')
+                for attribute_index in range(len(attributes)):
+                    attributes[attribute_index].printout()
 
             print('')
-            etm_handler.print_issues()
+            etm_interpreter.print_issues()
             print('')
         

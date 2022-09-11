@@ -33,3 +33,17 @@ class FileFilter(Filter):
             (self.media_type == None or file.media_type == self.media_type)
     def filter(self, files):
         return [f for f in files if self.matches_filter(f)]
+
+class AttributeFilter(Filter):
+    def __init__(self, display_type=None, trait_type=None, value=None, value_type=None):
+        self.display_type = display_type
+        self.trait_type = trait_type
+        self.value = value
+        self.value_type = value_type
+    def matches_filter(self, attribute):
+        return (self.display_type in [None, attribute.display_type]) and\
+            (self.trait_type in [None, attribute.trait_type]) and\
+            (self.value in [None, attribute.value]) and\
+            (self.value_type in [None, attribute.value_type])
+    def filter(self, attributes):
+        return [a for a in attributes if self.matches_filter(a)]

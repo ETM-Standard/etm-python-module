@@ -4,20 +4,6 @@ from re import S
 from turtle import st
 from standard_modules.issue_handler import IssueHandler
 
-# def extension_name_valid(extension_name):
-#     if len(extension_name.split('_')) != 3: return False #verify 3 sections separated by underscores
-#     extension_name_parts = extension_name.split('_')
-    
-#     if not extension_name_parts[0] == 'ETM': return False
-
-#     if not extension_name_parts[2].startswith('v'): return False
-#     version = extension_name_parts[2][1:]
-#     if len(version.split('.')) != 3: return False #verify version
-#     version_parts = version.split('.')
-#     for digit in version_parts:
-#         if not digit.isdigit(): return False
-#     return True
-
 def get_extension_module(standard_name_str, parent=None):
     standard_name = get_standard_name(standard_name_str)
     module = importlib.import_module(f'standard_modules.{standard_name.get_basename()}'.lower())
