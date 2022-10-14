@@ -1,5 +1,5 @@
 examples/outputs
-examples/inputs/custom_metadata.json
+examples/inputs/custom_metadata*.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

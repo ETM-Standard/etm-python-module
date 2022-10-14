@@ -11,6 +11,7 @@ class Attribute(JsonObject):
     def from_values(self, value, trait_type=None, display_type=None):
         self.value = value
         self.value_type = self._get_value_type()
+        self._value_key_present = True
         self.trait_type = trait_type
         self.display_type = display_type
         return self
@@ -39,9 +40,9 @@ class Attribute(JsonObject):
         return 'string'
     def to_dict(self, attribute_dict_list):
         attribute_dict = {}
-        attribute_dict[DISPLAY_TYPE_KEY] = self.display_type
+        if self.display_type != None: attribute_dict[DISPLAY_TYPE_KEY] = self.display_type
         if self.trait_type != None: attribute_dict[TRAIT_TYPE_KEY] = self.trait_type
-        if self.value != None: attribute_dict[VALUE_KEY] = self.value
+        attribute_dict[VALUE_KEY] = self.value
         attribute_dict_list.append(attribute_dict)
     def _log_error(self, message):
         self.issue_handler.log_error(self.parent.standard_name.get_full_name(), f'Attribute[{self.attribute_index}]', message)
